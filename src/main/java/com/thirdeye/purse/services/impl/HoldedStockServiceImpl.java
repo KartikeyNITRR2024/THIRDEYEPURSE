@@ -173,7 +173,10 @@ public class HoldedStockServiceImpl implements HoldedStockService {
     	holdedStockDto.setBuyingTotalPrice(holdedStock.getBuyingTotalPrice());
     	holdedStockDto.setNoOfStock(holdedStock.getNoOfStock());
     	holdedStockDto.setType(holdedStock.getType());
-    	holdedStockDto.setCurrent(toDto(holdedStock.getCurrent()));
+    	if(holdedStock.getCurrent() != null)
+    	{
+    	   holdedStockDto.setCurrent(toDto(holdedStock.getCurrent()));
+    	}
     	holdedStockDto.setSellingPriceOfSingleStoke(holdedStock.getSellingPriceOfSingleStoke());
     	holdedStockDto.setSellingTime(holdedStock.getSellingTime());
     	holdedStockDto.setSellingTotalPrice(holdedStock.getSellingTotalPrice());
